@@ -18,7 +18,7 @@ export async function GET (){
   }
 
    try{
-      const res = await fetch(`http://localhost:3000/api/v2/pods`)       
+      const res = await fetch(`http://${process.env.SERVER_HOST}/api/v2/pods`)       
 
       const pods = await res.json()
 

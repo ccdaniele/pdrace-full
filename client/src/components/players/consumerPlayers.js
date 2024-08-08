@@ -23,7 +23,7 @@ export async function consumerFetch() {
     
     try{
         // new rabbitmq connection started
-            const rabbit = new Connection('amqp://guest:guest@localhost:5672')
+            const rabbit = new Connection(`${process.env.RABBITMQ_CREDS}`)
 
             rabbit.on('error', (err) => {
                 console.log('RabbitMQ connection error', err)
@@ -33,7 +33,7 @@ export async function consumerFetch() {
                 console.log('Connection successfully (re)established')
             })
 
-        // creates a new consumer 
+        // creates a new consumer instance 
             const sub = rabbit.createConsumer(queueConfig, async (msg) => {
                 latestMessage = msg;
                 console.log('Received message (user-events)', msg)
