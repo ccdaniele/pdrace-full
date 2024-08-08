@@ -10,15 +10,6 @@ export function RandomPlayer(){
   const [isLoading, setLoading] = useState(true)
   const [check, setCheck] = useState(0)
 
-//   async function fetchPlayer(){
-  
-//     const res = await consumerFetch()
-//     console.log(load)
-//     // const payload = await res.json() 
-//     //  setData(payload.data)
-//     //  typeof data.name == "undefined"? isLoading : setLoading(false)
-      
-//  }
   
   useEffect(() => {  
     const fetchMessage = async () => {
