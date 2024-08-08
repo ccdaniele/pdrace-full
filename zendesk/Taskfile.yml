@@ -1,0 +1,28 @@
+# https://taskfile.dev
+version: '3'
+
+tasks:
+  build-zd:
+    dir: cmd/zd
+    cmds:
+      - go build -o build/zd -buildvcs=false
+
+  run-zd:
+    dir: cmd/zd
+    cmds:
+      - go run main.go
+
+  run-zd-dev:
+    dir: cmd/zd
+    cmds:
+      - air
+  
+  run-con:
+    dir: cmd/consumer
+    cmds:
+      - go run main.go {{.CLI_ARGS}}
+
+  run-us:
+    dir: cmd/mockUserService
+    cmds:
+      - go run main.go

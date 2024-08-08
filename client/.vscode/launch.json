@@ -1,0 +1,29 @@
+
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:3002",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": false
+    },
+      {
+        "name": "Launch Server",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "npm run dev",
+        "sourceMaps": false
+      },
+  ],
+  "compounds": [
+    {
+      "name": "Debug Next.js / Chrome",
+      "configurations": ["Launch Server", "Launch Chrome"]
+    }
+  ]
+}
+    

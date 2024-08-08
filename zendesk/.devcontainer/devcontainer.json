@@ -1,0 +1,24 @@
+{
+  // devcontainer Build Configuration ===
+  "dockerComposeFile": "compose.yaml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces",
+  // ===
+  //
+  // devcontainer Environment Configuration ===
+  "remoteUser": "vscode",
+  "forwardPorts": [], // vscode forwards the ports automatically anyways
+  // List of available features: https://github.com/devcontainers/features/tree/main/src
+  "features": {
+    // https://github.com/eitsupi/devcontainer-features/tree/main/src/go-task
+    "ghcr.io/eitsupi/devcontainer-features/go-task:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [],
+      "settings": {}
+    }
+  },
+  // ===
+  "postCreateCommand": ".devcontainer/postCreate.sh"
+}
